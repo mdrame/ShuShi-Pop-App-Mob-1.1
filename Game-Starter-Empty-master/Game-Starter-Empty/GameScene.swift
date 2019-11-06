@@ -11,39 +11,19 @@ import GameplayKit
 
 class GameScene: SKScene {
   
-    // spaeShip
-    var spaceShip = SKSpriteNode()
-    
-    //making frames
+
   
     
     override func didMove(to view: SKView) {
        
-        spaceShip = SKSpriteNode(imageNamed: "spaceship")
-        spaceShip.size = CGSize(width: 100, height: 100)
-        spaceShip.position = CGPoint(x: 10, y: 50)
-        addChild(spaceShip)
         
-       
     }
     
         
     
     
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // dis runs when touches began
-        
-        let rightWard = SKAction.move(to: CGPoint(x: 390, y: 50), duration: 1.9)
-        let lefttWard = SKAction.move(to: CGPoint(x: 10, y: 50), duration: 1.9)
-        let sequency = SKAction.sequence([ rightWard, lefttWard])
-        let loop = SKAction.repeatForever(sequency)
-
-        spaceShip.run(loop)
-      
-
-    }
-    
+  
     
   
   

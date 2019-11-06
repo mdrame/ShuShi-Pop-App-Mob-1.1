@@ -17,38 +17,43 @@ class GameViewController: UIViewController {
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            let scene = GameScene(size: view.bounds.size)
-            // Set the scale mode to scale to fit the window
-            scene.scaleMode = .aspectFill
-          
-            // Present the scene
-            view.presentScene(scene)
+           let scene = GameScene(size: view.bounds.size)
             
-            view.ignoresSiblingOrder = true
+            if let skView = self.view as? SKView {
+                skView.presentScene(scene)
+            }
+//            // Set the scale mode to scale to fit the window
+//            scene.scaleMode = .aspectFill
+//
+//            // Present the scene
+//            view.presentScene(scene)
+//
+//            view.ignoresSiblingOrder = true
+//
+//            view.showsFPS = true
+//            view.showsNodeCount = true
             
-            view.showsFPS = true
-            view.showsNodeCount = true
         }
     }
 
-    override var shouldAutorotate: Bool {
-        return true
-    }
-
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
-    }
-
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
+//    override var shouldAutorotate: Bool {
+//        return true
+//    }
+//
+//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+//        if UIDevice.current.userInterfaceIdiom == .phone {
+//            return .allButUpsideDown
+//        } else {
+//            return .all
+//        }
+//    }
+//
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//        // Release any cached data, images, etc that aren't in use.
+//    }
+//
+//    override var prefersStatusBarHidden: Bool {
+//        return true
+//    }
 }
